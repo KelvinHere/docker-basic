@@ -1,6 +1,6 @@
 # Simple Example of Docker
 
-Python program uses Numpy to generate a random number
+This docker image when built will contain a Python program that uses Numpy to generate a random number (as a purposeful dependency).
 
 
 ## Dockerfile contents
@@ -8,12 +8,15 @@ Python program uses Numpy to generate a random number
 
 * ```ADD main.py .``` # Files to add to this image
 
-* ```RUN pip install numpy``` # List of dependancies to add to image
+* ```RUN pip install numpy``` # List of dependencies to add to image
 
-* ```CMD [ "python", "./main.py" ]``` # Default execution point for conatiner
+* ```CMD [ "python", "./main.py" ]``` # Default execution point for container
 
-## Commands
+## Steps to use
 
-* ```docker build -t python-numpy``` builds the docker image named python-numpy, add -ti for ineractive terminal, ie user input
+1. Clone repo to local machine
 
-* ```docker run python-numpy``` runs the created image in a docker container
+1. ```docker build -t python-numpy``` from working directory, build the docker image named python-numpy
+
+1. ```docker run -ti python-numpy``` runs the created image in a docker container in interactive mode (-i) with terminal (-t)
+
